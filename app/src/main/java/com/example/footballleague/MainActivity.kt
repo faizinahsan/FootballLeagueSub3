@@ -43,10 +43,7 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener{
         mAboutDataListener2 = listener
     }
 
-    var languages = arrayOf("English", "French", "Spanish", "Hindi", "Russian", "Telugu", "Chinese", "German", "Portuguese", "Arabic", "Dutch", "Urdu", "Italian", "Tamil", "Persian", "Turkish", "Other")
-
     var spinner: Spinner? = null
-    var textView_msg: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -66,7 +63,8 @@ class MainActivity : AppCompatActivity(),AdapterView.OnItemSelectedListener{
                     response: Response<LeaguesResponses>
             ) {
                 if (response.code()==200){
-                    response.body()?.leagues?.let { items.addAll(it) }
+                    items.clear()
+                    response.body()?.leagues?.filter { it.strSport=="Soccer" }?.let { items.addAll(it) }
 //                    showRecyclerList(items)
                     // Create an ArrayAdapter using a simple spinner layout and languages array
                     setSpinnerAdapter(items)

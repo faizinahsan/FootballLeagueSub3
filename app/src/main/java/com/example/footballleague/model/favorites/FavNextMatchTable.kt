@@ -17,7 +17,7 @@ data class FavNextMatchTable(
     @ColumnInfo(name="intHomeScore") val intHomeScore : String?,
     @ColumnInfo(name="intRound") val intRound : Int?,
     @ColumnInfo(name="intAwayScore") val intAwayScore : String?,
-    @ColumnInfo(name="strDate") val strDate : String,
+    @ColumnInfo(name="strDate") val strDate : String?,
     @ColumnInfo(name="strTime") val strTime : String,
     @ColumnInfo(name="idHomeTeam") val idHomeTeam : Int,
     @ColumnInfo(name="idAwayTeam") val idAwayTeam : Int,

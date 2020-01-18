@@ -59,6 +59,10 @@ dependencies {
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'com.android.support:support-v4:29.+'
     testImplementation 'junit:junit:4.12'
+//    Junit3 & Mockito
+    testImplementation group: 'org.mockito', name: 'mockito-core', version: '3.0.0'
+    testImplementation 'org.mockito:mockito-inline:3.0.0'
+
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
 
